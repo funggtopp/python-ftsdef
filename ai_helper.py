@@ -8,10 +8,10 @@ def ai_helper_webxpath(user_input='',always=False):
     
     user_input = str( user_input ) 
     # 替换为你的实际 API Key
-    api_key = "bd034586-b074-4385-8f56-87524552e94b"
+    api_key = "bd034586-4b"
     
     # API 端点
-    url = "https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions"
+    url = "https://ark.cn-.com/api/v3/bots/chat/completions"
     
     # 请求头
     headers = {
@@ -48,7 +48,7 @@ def ai_helper_websearcher(user_input = '当前你不需要做任何事情，只�
     
     user_input = str( user_input ) 
     # 替换为你的实际 API Key
-    api_key = "bd034586-b074-4385-8f56-87524552e94b"
+    api_key = "bd0352e94b"
     
     # API 端点
     url = "https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions"
@@ -59,7 +59,7 @@ def ai_helper_websearcher(user_input = '当前你不需要做任何事情，只�
         "Content-Type": "application/json"
     }
     
-    model = "bot-20240925084731-t5sxz" #该模型使用doubao-pro-4k创建的智能体
+    model = "bot--t5sxz" #该模型使用doubao-pro-4k创建的智能体
     
     def chat_with_ai(message):
         """与 AI 进行聊天"""
@@ -91,7 +91,7 @@ def ai_helper_requests(user_input = '方涛', always = False):
     user_input = str( user_input )
     always = bool(always)    
     # 替换为你的实际 API Key
-    api_key = "bd034586-b074-4385-8f56-87524552e94b"
+    api_key = "bd034524552e94b"
     
     # API 端点
     url = "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
@@ -102,7 +102,7 @@ def ai_helper_requests(user_input = '方涛', always = False):
         "Content-Type": "application/json"
     }
     
-    model = "ep-20240925081958-hfmjg" # 该模型使用doubao-pro-4k
+    model = "ep-hfmjg" # 该模型使用doubao-pro-4k
     
     def chat_with_ai(message):
         """与 AI 进行聊天"""
@@ -142,7 +142,7 @@ def ai_helper_stream(user_input = '方涛', always = False):
     
     client = Ark(
         base_url="https://ark.cn-beijing.volces.com/api/v3",
-        api_key = "bd034586-b074-4385-8f56-87524552e94b",
+        api_key = "bd034586-4552e94b",
     )
 
     messages = [
@@ -154,7 +154,7 @@ def ai_helper_stream(user_input = '方涛', always = False):
     print("-----------------------------------")
     
     stream = client.chat.completions.create(
-        model="ep-20240924132703-wzrg6",
+        model="ep-3-wzrg6",
         messages = messages,
         stream=True
     )
