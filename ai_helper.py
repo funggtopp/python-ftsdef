@@ -43,6 +43,12 @@ def ai_helper_webxpath(user_input='',always=False):
     ai_output = chat_with_ai(user_input)
     print(f"AI: {ai_output}")
 def ai_helper_websearcher(user_input = '当前你不需要做任何事情，只需要输出一段文字"可以开始冲浪了"',always = False):
+    '''
+    搜索网页内容；
+    参数：
+        user_input = url，网站地址；
+        always = [False,True]，缺省False，一次搜索。如果为True则使用对话形式，可多次输出。
+    '''
     import requests
     import json
     
@@ -85,6 +91,14 @@ def ai_helper_websearcher(user_input = '当前你不需要做任何事情，只�
     
     
 def ai_helper_requests(user_input = '方涛', always = False):
+    '''
+    大模型问答内容；
+    参数：
+        user_input ：用户输入内容；大模型根据自建内容回复；
+        always = [False,True]，缺省False，一次性回答。如果为True则使用对话形式，可多次输出。建议只使用False，如果需要多次输出，使用ai_helper_stream。
+    '''
+
+    
     import requests
     import json
     
@@ -135,6 +149,14 @@ def ai_helper_requests(user_input = '方涛', always = False):
         print(f"AI: {ai_output}")
 
 def ai_helper_stream(user_input = '方涛', always = False):
+    '''
+    大模型流式问答
+    参数：
+        user_input ：用户输入内容；大模型根据自建内容回复；
+        always = [False,True]，缺省False，一次性回答。如果为True则使用对话形式，可多次输出并记忆上下文。
+    '''
+
+    
     from volcenginesdkarkruntime import Ark
 
     user_input = str( user_input )
