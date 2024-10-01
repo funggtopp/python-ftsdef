@@ -1,5 +1,6 @@
 def ai_helper_webxpath(user_input='',always=False):
     '''
+    Written by 方涛 at 2024/09
     网页解析函数，参数：
     user_input:输入要解析的网站url，并直接说出需要提取的内容
     '''
