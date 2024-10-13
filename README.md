@@ -6,3 +6,5 @@
 - from_excel_cols_to_list ：excel粘贴列名转换为列表
 ## AI 相关
 - ai_helper ：模拟deeplearning的helper，使用豆包API
+## office
+- excel_lookup：模拟excel的lookup操作
