@@ -1,7 +1,6 @@
 def from_str_to_list( mystr = 'ok',sep=','):
     '''
     written by 方涛，20241013
-    
     从excel或粘贴板中直接粘贴过来的字符串，带分隔符（只支持，和空格）的转换成列表形式
 
     换行符、英文引号 均作删除处理，空格不作为分隔符时也删除
@@ -28,5 +27,7 @@ def from_str_to_list( mystr = 'ok',sep=','):
         mystr = re.sub('[\n"]','',mystr)
         mystr = re.sub('[\t+ +　+]',',',mystr)
         mystr = re.sub(',+',',',mystr)
+
+    mystr = re.sub(r'^,+|,+$', '', mystr) #删除开头和结尾的英文逗号分隔符
     mystr = mystr.split(',')
     return mystr
