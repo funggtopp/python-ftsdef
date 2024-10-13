@@ -1,0 +1,38 @@
+def excel_lookup(df_left=[],df_right=[],on_left='',on_right='',lookup_left='',lookup_right='',r_cols=''):
+    '''
+    模拟excel的lookup操作
+    说明：
+        根据on值将左右两组数据建立对应关系，按给定的左右列名将右侧数据的列值赋值给左侧数据的列。
+    参数：
+        df_left：左pandas DataFrame
+        df_right：右pandas DataFrame
+        on_left：左侧数据on值的 列名；按该列中的值 在 右侧数据的on列中寻找匹配行
+        on_right：右侧数据on值的 列名；按定左侧on值在该列中寻找匹配行
+        lookup_left：左侧数据要被赋值的列，可以是列表或字符串
+        lookup_right：右侧数据列，可以是列表或字符串，类型要与lookup_left对应
+        r_cols：要返回的具体的列名，如果是空则全部返回原左数据框的列
+    返回：
+        DataFrame
+        
+    可能的报错：
+        如果左右侧数据列的类型不一致，可能会报错。
+    '''
+    ### 先检查on值有没有重复值
+    if any(df_left[on_left].duplicated()):
+        print('左数据框关键词有重复词，此函数无法使用')
+        return 'Error'
+    if any(df_right[on_right].duplicated()):
+        print('右数据框关键词有重复词，此函数无法使用')
+        return 'Error'
+        
+    ### 按on值 进行 lookup 操作    
+    for s_str in df_left[ on_left ].to_list():
+        tmp = df_right.loc[ df_right[ on_right ] == s_str,lookup_right ].values
+        if len(tmp)>0:
+            df_left.loc[ df_left[ on_left ] == s_str,lookup_left ] = list(tmp)
+
+    ### 按要求的列值输出
+    if type(r_cols) == list and len(r_cols)>0:
+        df_left = df_left[ r_cols ]
+        
+    return df_left
