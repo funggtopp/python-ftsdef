@@ -8,6 +8,9 @@
 - from_str_to_list：将带分隔符的字符串转换为列表，from_str_to_list('今天,挺好的',sep=',')
 - from_str_to_datestr：将随机的非标准日期字符串转换成标准"1975-05-26"字符串
 - from_str_to_datestr_of_df：pandas DataFrame按列转换
+## 数据清洗
+- clean_merged_df：对刚完成merge合并的DataFrame进行列值对比，列值向左移动，并删除右侧多余列
+- compare_and_clean_columns：对比DataFrame中指定的两列值，列值向左移动，并删除右侧多余列；有数值差异不删除
 ## AI 相关
 - ai_helper ：模拟deeplearning的helper，使用豆包API
 ## office
