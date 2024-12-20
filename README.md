@@ -11,7 +11,7 @@
 ## 数据清洗
 - clean_merged_df：对刚完成merge合并的DataFrame进行列值对比，列值向左移动，并删除右侧多余列
 - compare_and_clean_columns：对比DataFrame中指定的两列值，列值向左移动，并删除右侧多余列；有数值差异不删除
-- def compare_and_swap_columns：两列比较，有差异，交换位置；无差异，右侧设为空；右列全为空，删除该列
+- compare_and_swap_columns：两列比较，有差异，交换位置；无差异，右侧设为空；右列全为空，删除该列
 ## AI 相关
 - ai_helper ：模拟deeplearning的helper，使用豆包API
 ## office
