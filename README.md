@@ -12,3 +12,4 @@
 - ai_helper ：模拟deeplearning的helper，使用豆包API
 ## office
 - excel_lookup：模拟excel的lookup操作
+- read_excel_sheets：单元格内容出现断行且单独占用一行，用此函数将断行内容补充进上一单元格内容
