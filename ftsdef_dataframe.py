@@ -116,3 +116,26 @@ def compare_and_swap_columns(df, col1, col2,show_info=True):
         if col1.endswith('_x') or col1.endswith('_y'):
             df = df.rename( columns = {col1:col1[:-2]} )
     return df
+
+###--
+def to_concat_df_broken_lines(df,cols=[],index_col_name='序号'):
+    '''
+    DataFrame中某一列中的值出现了断行的情况；断行的值向上合并
+    
+    特别注意：
+        index_col_name索引列必须存在，且断行时为空
+
+    参数：
+        df：需要处理的DataFrame
+        cols：出现断行情况的列名，数组形式，如['项目名称']
+        index_col_name，缺省='序号'，索引列名
+
+    返回：
+        处理完成的DataFrame
+    '''
+    mask = df[df[index_col_name].isnull()].index
+    for combine_col in cols:
+        for index in mask[::-1]:
+            df.loc[index-1,combine_col] += df.loc[index,combine_col]
+    df = df.drop(mask)
+    return df
