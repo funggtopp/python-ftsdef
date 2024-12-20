@@ -120,6 +120,7 @@ def compare_and_swap_columns(df, col1, col2,show_info=True):
 ###--
 def to_concat_df_broken_lines(df,cols=[],index_col_name='序号'):
     '''
+    断行合并
     DataFrame中某一列中的值出现了断行的情况；断行的值向上合并
     
     特别注意：
