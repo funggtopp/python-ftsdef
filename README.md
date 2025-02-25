@@ -1,4 +1,6 @@
-自编python函数，以py文件存在。<br>
+自编自用python函数<br>
+仓库1：https://github.com/funggtopp/python-ftsdef <br>
+仓库2：https://gitee.com/funggtopp/python-ftsdef <br>
 
 
 ## 转换相关 
