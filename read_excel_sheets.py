@@ -1,4 +1,4 @@
-def read_excel_sheets_for_No._NaN(file_name='',sheet_name='',skip=[0,0],to_str_column=[],to_concat_column=[],index_col_name='序号'):
+def read_excel_sheets_for_No_NaN(file_name='',sheet_name='',skip=[0,0],to_str_column=[],to_concat_column=[],index_col_name='序号'):
     '''
     主要用于excel表格中出现断行且断行单独占用单元格的情况；主要表现为：断行占用两个或多个垂直单元格；断行单元格相邻单元格为NaN。
     特别注意：
